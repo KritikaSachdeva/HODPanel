@@ -1,0 +1,195 @@
+.heading
+{
+	background-color: #f4f6f9;
+	margin: -10px;
+
+}
+
+.logout
+{
+	float: right;
+	padding-right: 30px;
+	font-size: 20px;
+}
+
+.head
+{
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    font-family: libre baskerville;
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 30px;
+}
+
+.rows{
+	margin: -10px;
+}
+
+
+.cen_part
+{
+	margin-top: 45px;
+	margin-left: 45px;
+	height: 500px;
+	box-shadow: 5px 5px 5px 5px grey;
+	text-align: center;
+	font-size: 30px;
+}
+
+.details_sec
+{
+	margin-top: 10px;
+	margin-left: 390px;
+	height: 100px;
+	box-shadow: 5px 5px 5px 5px grey;
+	text-align: center;
+	font-size: 30px;
+}
+.sidebar
+{
+	height: 540px;
+	text-align: center;
+	text-decoration: bold;
+	font-size: 20px;
+	border-style:solid;
+	border-color: #c9cacc;
+}
+
+/* Style the buttons inside the tab */
+.nav button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.nav button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.nav button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    text-align: center;
+    text-decoration-color: black;
+}
+
+li{
+    float: left;
+}
+
+.announcements {
+    font-size: 25px;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    color: #000;
+    margin-top: 0px;
+}
+
+.textannouncement {
+    display: block;
+    font-size: 15px;
+}
+
+.viewallbtn {
+    height: 24px;
+    width: auto;
+    font: bold 11px Verdana, Helvetica, sans-serif;
+    padding: 0px 10px;
+    margin: 0;
+    border: 1px solid #2b86cc;
+    background-color: #008CBA;
+    border-radius: 1px;
+    color: #fff;
+    float: right;
+}
+
+.hr { 
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    color: #000;
+}
+
+
+
+.my-summaryrequests-list {
+    border: 1px solid #a7e1ff;
+    margin: 3px 0px;
+    background: #fff;
+}
+
+.mright110{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.dbrd-reqcounttxt2{
+    float: right;
+    padding-right: 15px;
+}
+
+#toptabs{width:100%;}
+.newrequest{ float:left; width:250px; margin-left: 50px;}
+.viewmystatus{float:right;width:250px; margin-right: 50px;}
+
+.whitebgBorder1 {
+    border: 1px solid #8CBAE8;
+    background-color: fff;
+    border-top: none;
+}
+
+#complaint-table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 98%;
+}
+
+#complaint-table td, #complaint-table th {
+    border: 1px solid #ddd;
+    padding: 6px;
+    text-align: center;
+}
+
+#complaint-table tr:nth-child(even){background-color: #f2f2f2;}
+
+#complaint-table tr:hover {background-color: #ddd;}
+
+#complaint-table th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+}
+
+#tabletop {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 50%;
+
+}
+
+#tabletop td {
+    padding: 2px;
+    text-align: center;
+}

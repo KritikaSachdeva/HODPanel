@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HODPanel</title>
+	<link rel="stylesheet" type="text/css" href="stylehod.css">
+	<link href='https://fonts.googleapis.com/css?family=Libre Baskerville' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet'>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+	<!-- Header strip-->
+
+	<div class="heading">
+		<ul class="head">
+			<li><img src="C:\Users\dell\Desktop\hodpanel\itserviceslogo.jpg" height="80px" width="80px"></li>
+			<li style="font-size: 50px; margin-left: 20px;">IT Services</li>
+			<li class="logout" style="margin-top: 20px;"><a href="#">Logout </a></li>
+		</ul>
+	</div>
+	<br>
+
+	<!-- Header ends here-->
+
+	<div class="rows">
+
+		<!--left side of page-->
+
+		<div class="col-sm-2 sidebar" style="background-color:#e3e4e5;">
+			<br>
+				
+				<!--announcements section-->
+
+				<div class="announcements">
+					<img src="C:\Users\dell\Desktop\hodpanel\ann.jpg" width="25px" style="margin-right: 5px;">Announcements</div>
+				<hr class="hr">
+				<div>
+					<div class="textannouncement">No announcements yet.</div>
+					<div class="clear" style="height:22px; line-height:10px;"></div>
+				</div>
+
+				<div>
+				<input type="button" class="viewallbtn" value="Show all" onclick="document.location.href='/AnnounceShow.do'">
+				</div>
+
+				<!--announcements section ends here-->
+				<div class="searchid" style="margin-top: 200px; font-size: 15px;">Search
+				<input type="text" value="Request ID" onkeypress="validateGotoReqIDonEnterKey(event)" onfocus="hideRequestIDTxt()" onblur="showRequestIDTxt()" id="searchReqid" class="formstyle4 floatleft pleft2" style="width:90px;">
+
+				<input type="button" class="goarwbtn" value="Go" onclick="return validateGotoReqID()" width="20px;">
+				</div>
+
+
+		</div>
+	</div>
+	<!--left side ends here-->
+
+		<!--nav bar-->
+		<div class="col-sm-10" style="background-color: black">
+			<div class="nav">
+				<button class= "tablinks" onclick="openTab(event, 'Home')" id="defaultOpen" style="color:white;">Home </button>
+        		<button class="tablinks" onclick="openTab(event, 'Complaint')" style="color:white;">Complaint</button>
+        		<button class="tablinks" onclick="openTab(event, 'History')" style="color:white;">History</button>
+        		<button class="tablinks"  onclick="openTab(event, 'Help')" style="color:white;">Help</button>
+        		<button class="tablinks"  onclick="openTab(event, 'Feedback')" style="color:white;">Feedback</button>
+      		</div>
+		</div>	
+		<!--nav bar ends here-->	
+
+		<!-- Tab content -->
+	<div id="Home" class="tabcontent" style="margin-left: 220px;">
+<div class="toptabs">
+		<div class="newrequest"><img src="C:\Users\dell\Desktop\hodpanel\newrequest.png" class="imgofnewrequest" style="margin-top: 8px; border-radius: 4px;
+    padding: 5px; width: 75px;">
+
+						<div class="submitrequest">
+
+							<div><a class="linkofnewrequest" style="font-size: 24px;" href="/Templates.do?module=mergedRequest">Submit new request</a></div>
+
+							<div class="textofnewrequest">Click above link to request a service.</div>
+
+						</div>
+						</div> <br>
+
+
+		<div class="viewmystatus"><img src="C:\Users\dell\Desktop\hodpanel\viewstatus.jpg" class="imgofviewmystatus" style="margin-top: 8px; border-radius: 4px;
+    padding: 5px; width: 75px;">
+
+						<div class="submitviewmystatus">
+						
+							<div><a class="linkofviewmystatus" style="font-size: 24px;" href="/Templates.do?module=mergedRequest">View Complaint Status</a></div>
+
+							<div class="textofviewmystatus">Click above link to view the status of your complaints.</div>
+
+		
+						</div>
+
+					</div> <br>
+
+		<div class="newcomplaint"><img src="C:\Users\dell\Desktop\hodpanel\newcomplaint.png" class="imgofnewcomplaint" style="margin-top: 8px; border-radius: 4px;
+    padding: 5px; width: 75px;">
+
+						<div class="submitcomplaint">
+
+							<div><a class="linkofnewcomplaint" style="font-size: 24px;" href="/Templates.do?module=mergedRequest">File a complaint</a></div>
+
+							<div class="textofnewcomplaint">Click above link to report an issue.</div>
+
+						</div>
+						
+					</div> <br>
+
+					</div>
+ <hr style="border-top: dotted 1px; color: blue;" />
+
+
+		
+		<!--inventory table-->
+		<div class="viewinventory">
+
+							<div><h2><center class="viewdptinventory" style="font-size: 24px; margin-left: auto;" href="/Templates.do?module=mergedRequest"><u>Department Inventory</u></center></h2></div>
+			
+
+			<p align="left" style="margin-left: 5px;">Last Updated: 03-07-2018<br/>
+<div>
+		<table id="tabletop">
+			<tbody>
+		<tr>
+   											 
+                       <td><input name="newadd" id="addNewRequest" type="button" class="formStylebuttonAct" value="New Issue" title="Default template used for new request creation. This template can be used for raising the request if no matching service or incident request is found." onclick="javascript:window.open('/WorkOrder.do?'+new Date().getTime()+'&amp;','_parent')"></td>
+       
+		<td id="RequesterReqView_NAV" width="70%">
+
+
+<script src="/scripts/ajax.js" type="text/javascript"></script>
+
+		<td nowrap="" align="left" class="fontBlack"><span id="startPageIndex">0</span> - <span id="endPageIndex">0</span> of <span id="totalRecordsCount">0</span>&nbsp;</td>
+		<td nowrap="" class="fontBlack"> |  
+		<img src="C:\Users\dell\Desktop\hodpanel\fast_backward.jpg" class="pagenav-first-off" width="20px" alt="First" title="First" border="0" align="ABSMIDDLE" hspace="2"><img src="C:\Users\dell\Desktop\hodpanel\backward.jpg" class="pagenav-previous-off" width="18px" alt="Previous" title="Previous" border="0" align="ABSMIDDLE" hspace="2"><img src="C:\Users\dell\Desktop\hodpanel\forward.jpg" class="pagenav-next-off" width="18px" alt="Next" title="Next" border="0" align="ABSMIDDLE" hspace="2"><img src="C:\Users\dell\Desktop\hodpanel\fast_forward.png" class="pagenav-lastpage-off" width="20px" alt="Last" title="Last" border="0" align="ABSMIDDLE" hspace="2"> | 
+		</td>
+		
+			<td nowrap="" class="fontBlack">&nbsp;
+				<select name="pageLength" onchange="return showRangeForLength('RequesterReqView', this.value)" class="formStyle" style="width:50">
+				<option value="25" selected=""> 25</option><option value="50"> 50</option><option value="100"> 100</option><option value="150"> 150</option><option value="200"> 200</option><option value="250"> 250</option>
+				</select> per page&nbsp;
+			</td>
+			<td colspan="4">&nbsp;</td>
+
+			<td colspan="4" nowrap=""><b>  &nbsp;Sort By: </b></td>
+			<td> <select>
+		  <option value="Room No" selected>Room No.</option>
+		  <option value="Person-in-charge">Person-in-charge</option>
+  		  <option value="Status">Status</option>
+  		  <option value="Complaint registered">Complaint registered</option>
+  		  
+		</select>  </td>
+	</td>
+			
+	</tr>
+</tbody></table>
+
+
+</div>
+
+<div class="maintableofinv" style="margin-top: 20px; margin-right: 4px;" >
+	 
+		<table id="complaint-table" class="complaint-table">
+		<thead>		
+		<tr style=" border: 1px solid black;">
+		  <th>Sno.</th>
+		   <th>Room No.</th>
+		   <th>System Id</th>
+		   <th>System Name</th>
+		   <th>Person in-charge</th>
+		   <th>Current status</th>
+		   <th>Complaint registered</th>
+		   <th>Details</th>
+		</tr>
+		</thead>
+		<tbody>
+		 <tr>
+		  <td>1</td>
+		   <td>201</td>
+		   <td>ABC/12</td>
+		   <td>PC</td>
+		   <td>Mr.AK</td>
+		   <td>OK</td>
+		   <td>No</td>
+		   <td><button>View Details>></button></td>
+		   
+		 </tr>
+		 
+		 <tr>
+		  <td>2</td>
+		   <td>SD Lab</td>
+		   <td>ABC/08</td>
+		   <td>PC</td>
+		   <td>Mr.PK</td>
+		   <td>OK</td>
+		   <td>No</td>
+		   <td><button>View Details>></button></td>
+ 		  </tr>
+
+ 		  <tr>
+		  <td>3</td>
+		   <td>201</td>
+		   <td>ABC/11</td>
+		   <td>PC</td>
+		   <td>Mr.AK</td>
+		   <td>Not OK</td>
+		   <td>Yes</td>
+		   <td><button>View Details>></button></td>
+		   
+		 </tr>
+		</tbody>
+		  </table>
+	  </p>
+
+	  </div>
+	
+		
+		</div>
+		<!--inventory table ends here-->
+
+
+	
+	 
+
+	<div id="Complaint" class="tabcontent">
+	  <h3>Complaint FORM</h3>
+	  <p> Available here</p> 
+	  <hr>
+	  <h3>Complaint Status</h3>
+	</div>
+
+
+
+	<div id="History" class="tabcontent">
+	  <h3><b>List of complaints</b></h3>
+	 </div>
+
+
+
+	<div id="Help" class="tabcontent">
+	  <h3>FAQs will be available here.</h3>
+	</div>
+
+
+
+	<div id="Feedback" class="tabcontent">
+	  <p>Feedback form will be available here.</p> 
+	</div>
+
+
+
+<script>
+
+	// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+	
+function openTab(evt, tabname) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(tabname).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+</script>
+
+
+</body>
+</html>
