@@ -20,4 +20,14 @@ function openTab(evt, tabname) {
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(tabname).style.display = "block";
     evt.currentTarget.className += " active";
+
+   
+}
+function test(){
+    document.getElementById('sidebar').innerHTML = `
+        <div class="announcements">
+            Hello ${2+2}
+            <p> blabla </p>
+        </div>
+    `
 }
